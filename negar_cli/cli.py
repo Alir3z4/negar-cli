@@ -70,3 +70,7 @@ def main():
             output_file.write(run_negar.cleanup.encode('utf-8'))
     finally:
         input_file.close()
+
+
+if __name__ == "__main__":
+    main()
