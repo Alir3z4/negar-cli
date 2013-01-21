@@ -58,3 +58,15 @@ def main():
         elif opt in '--cleanup-kashidas': args.append('cleanup-kashidas')
         elif opt in '--cleanup-ex-marks': args.append('cleanup-ex-marks')
         elif opt in '--cleanup-spacing': args.append('cleanup-spacing')
+
+    try:
+        input_file = open(file_name)
+        output_file = open(output_file, 'w')
+        while True:
+            line = unicode(input_file.readline(), encoding='utf-8')
+            if len(line) == 0:
+                break
+            run_negar = ''
+            output_file.write(run_negar.cleanup.encode('utf-8'))
+    finally:
+        input_file.close()
