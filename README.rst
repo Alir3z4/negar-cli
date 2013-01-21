@@ -7,10 +7,10 @@ Negar Command Line Interface
 How to use
 ==========
 
-you can use me with a command like this:
+you can use `negar-cli`:
 ::
 
-    $ negar [ARGUMENTS] -f [INPUT_FILENAME] -o [OUTPUT_FILENAME]
+    $ negar-cli [ARGUMENTS] -f [INPUT_FILENAME] -o [OUTPUT_FILENAME]
 
 Arguments are:
 ::
