@@ -1,6 +1,6 @@
 import sys
 import getopt
-from negar_cli.helpers import help_message
+import helpers
 
 def main():
     """
@@ -13,7 +13,7 @@ def main():
     # Check if user typed command without any argument,
     # show him how to use negar!
     if len(sys.argv) < 2:
-        help_message()
+        helpers.help_message()
         exit(0)
     try:
         opts, args = getopt.getopt(
@@ -29,12 +29,12 @@ def main():
         )
     except getopt.GetoptError, err:
         print(err)
-        help_message()
+        helpers.help_message()
         sys.exit(1)
 
     for opt, arg in opts:
         if opt in ['-h', '--help']:
-            help_message()
+            helpers.help_message()
             sys.exit(0)
         elif opt in ['-V', '--Version']:
             #TODO: get real version
