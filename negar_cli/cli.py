@@ -7,7 +7,7 @@ def main():
     main()
     ======
     """
-    output_file = "Negar_Output"
+    output_file = "negar_output"
     input_file = ''
     file_name = ''
     # Check if user typed command without any argument,
