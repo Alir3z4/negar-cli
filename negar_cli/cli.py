@@ -41,8 +41,8 @@ def main():
             print("You are using Negar version: __version__")
         elif opt in '--fix-non-persian-chars':
             args.append('fix-non-persian-chars')
-        elif opt in ('-f', '--file'): file_name = arg
-        elif opt in ('-o', '--output'): output_file = arg
+        elif opt in ['-f', '--file']: file_name = arg
+        elif opt in ['-o', '--output']: output_file = arg
         elif opt in '--fix-dashes':  args.append('fix-dashes')
         elif opt in '--fix-three-dots':  args.append('fix-three-dots')
         elif opt in '--fix-english-quotes': args.append('fix-english-quotes')
