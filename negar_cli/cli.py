@@ -39,7 +39,7 @@ def main():
         elif opt in ['-V', '--Version']:
             #TODO: get real version
             print("You are using Negar version: __version__")
-        elif opt in ('--fix-non-persian-chars'):
+        elif opt in '--fix-non-persian-chars':
             args.append('fix-non-persian-chars')
         elif opt in ('-f', '--file'): file_name = arg
         elif opt in ('-o', '--output'): output_file = arg
