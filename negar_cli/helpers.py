@@ -1,15 +1,15 @@
+from version import __version__
 
 def get_version():
     """
     get_version()
     =============
-    
+
     Return version number in str
 
     :rtype: str
     """
-    return ".".join(map(str, __import__('__init__').__version__)),
-
+    return ".".join(map(str, __version__))
 
 def help_message():
     print("""
