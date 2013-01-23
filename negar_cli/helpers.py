@@ -1,4 +1,16 @@
 
+def get_version():
+    """
+    get_version()
+    =============
+    
+    Return version number in str
+
+    :rtype: str
+    """
+    return ".".join(map(str, __import__('__init__').__version__)),
+
+
 def help_message():
     print("""
 Welcome to Negar Persian editor program
@@ -15,26 +27,32 @@ Options:
        --fix-dashes                 Disable fix dashes feature
        --fix-three-dots             Disable fix three dots feature
        --fix-english-quotes         Disable fix english quotes feature
-       --fix-hamzeh                 Disable fix hamzeh feature
-       --hamzeh-with-yeh            Use 'Hamzeh' instead of 'yeh' for fix hamzeh feature
-       --fix-spacing-bq             Disable fix spacing braces and qoutes feature
+       --fix-hamzeh                 Disable fix 'Hamzeh' feature
+       --hamzeh-with-yeh            Use 'Hamzeh' instead of 'yeh' for fix 'Hamzeh' feature
+       --fix-spacing-bq             Disable fix spacing braces and 'qoutes' feature
        --fix-arabic-num             Disable fix arabic num feature
        --fix-english-num            Disable fix english num feature
        --fix-non-persian-chars      Disable fix misc non persian chars feature
-       --fix-p-spacing              Disable fix perfix spacing feature
-       --fix-p-separate             Disable fix perfix separating feature
+       --fix-p-spacing              Disable fix prefix spacing feature
+       --fix-p-separate             Disable fix prefix separating feature
        --fix-s-spacing              Disable fix suffix spacing feature
        --fix-s-separate             Disable fix suffix separating feature
        --aggresive                  Disable aggresive feature
-       --cleanup-kashidas           Disable cleanup kashidas feature
+       --cleanup-kashidas           Disable cleanup 'kashidas' feature
        --cleanup-ex-marks           Disable cleanup extra marks feature
        --cleanup-spacing            Disable cleanup spacing feature
-       --add-untouch-list[=FILE]    Add a list of words from 'FILE' to untouchable list.
-                                    The list 'fix-s-separate'& 'fix-p-separate' use to add
-                                    true spacing
+
+
+Version:
+Negar: {negar_version}
+Negar-CLI: {cli_version}
+
 Exit status:
 0   if OK,
-1   if unknown argumant passed to the Negar.
+1   if unknown argument passed to the Negar.
 
-To get more information visit the website: http://shahinism.github.com/Negar
-        """)
+To get more information visit the website: http://github.com/OpenSourceMotherFucker/negar-cli
+        """.format(
+        negar_version='0.6.1',
+        cli_version=get_version()
+    ))
