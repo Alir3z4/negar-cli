@@ -1,4 +1,16 @@
 
+def get_version():
+    """
+    get_version()
+    =============
+    
+    Return version number in str
+
+    :rtype: str
+    """
+    return ".".join(map(str, __import__('__init__').__version__)),
+
+
 def help_message():
     print("""
 Welcome to Negar Persian editor program
