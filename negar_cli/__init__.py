@@ -1,1 +1,2 @@
-__version__ = (1,0)
+# I don't know
+# But leaving a file completely empty is just sad.
