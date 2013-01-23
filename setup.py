@@ -22,6 +22,7 @@ setup(
         'texteditor',
         'persian'
     ],
+    install_requires=['python-negar',],
     entry_points={
         'console_scripts':[
             'negar-cli = negar_cli.cli:main',
