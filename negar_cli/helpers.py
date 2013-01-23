@@ -42,9 +42,17 @@ Options:
        --cleanup-ex-marks           Disable cleanup extra marks feature
        --cleanup-spacing            Disable cleanup spacing feature
 
+
+Version:
+Negar: {negar_version}
+Negar-CLI: {cli_version}
+
 Exit status:
 0   if OK,
 1   if unknown argument passed to the Negar.
 
 To get more information visit the website: http://github.com/OpenSourceMotherFucker/negar-cli
-        """)
+        """.format(
+        negar_version='0.6.1',
+        cli_version=get_version()
+    ))
