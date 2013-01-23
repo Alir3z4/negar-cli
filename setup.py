@@ -1,9 +1,9 @@
 from negar_cli.helpers import get_version
 
 try:
-    from setuptools import setup, find_packages
-except ImportError:
     from distutils.core import setup
+except ImportError:
+    from setuptools import setup, find_packages
 
 setup(
     name='negar-cli',
