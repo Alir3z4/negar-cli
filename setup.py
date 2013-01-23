@@ -3,11 +3,9 @@ try:
 except ImportError:
     from distutils.core import setup
 
-from negar_cli import helpers
-
 setup(
     name='negar-cli',
-    version=helpers.get_version(),
+    version=".".join(map(str, __import__('negar_cli').__version__)),
     packages=['negar_cli'],
     url='https://github.com/OpenSourceMotherFucker/negar-cli',
     license='GPLv3',
