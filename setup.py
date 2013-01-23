@@ -1,11 +1,13 @@
+from negar_cli.helpers import get_version
+
 try:
-    from setuptools import setup, find_packages
-except ImportError:
     from distutils.core import setup
+except ImportError:
+    from setuptools import setup, find_packages
 
 setup(
     name='negar-cli',
-    version=".".join(map(str, __import__('negar_cli').__version__)),
+    version=get_version(),
     packages=['negar_cli'],
     url='https://github.com/OpenSourceMotherFucker/negar-cli',
     license='GPLv3',
