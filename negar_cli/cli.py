@@ -1,6 +1,10 @@
 import sys
 import getopt
+from negar.virastar import PersianEditor
 import helpers
+
+#TODO: This is bullshit, Should be handled by `negar` itself.
+negar_version = '0.6.1'
 
 def main():
     """
@@ -37,8 +41,7 @@ def main():
             helpers.help_message()
             sys.exit(0)
         elif opt in ['-V', '--Version']:
-            #TODO: get real version
-            print("You are using Negar version: __version__")
+            print("You are using Negar version: %s" % negar_version)
         elif opt in '--fix-non-persian-chars':
             args.append('fix-non-persian-chars')
         elif opt in ['-f', '--file']: file_name = arg
@@ -66,8 +69,8 @@ def main():
             line = unicode(input_file.readline(), encoding='utf-8')
             if len(line) == 0:
                 break
-            run_negar = ''
-            output_file.write(run_negar.cleanup.encode('utf-8'))
+            pe_editor = PersianEditor(line, *args)
+            output_file.write(pe_editor.cleanup().encode('utf-8'))
     finally:
         input_file.close()
 
