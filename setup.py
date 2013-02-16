@@ -1,4 +1,4 @@
-from negar_cli.helpers import get_version
+from negar_cli.version import __version__
 
 try:
     from distutils.core import setup
@@ -7,7 +7,7 @@ except ImportError:
 
 setup(
     name='negar-cli',
-    version=get_version(),
+    version=__version__,
     packages=['negar_cli'],
     url='https://github.com/OpenSourceMotherFucker/negar-cli',
     license='GPLv3',
