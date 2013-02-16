@@ -24,6 +24,7 @@ negar-cli
 
 Usage:
     negar-cli -h
+    negar-cli -v
     negar-cli -i <INPUTFILE> [-o <OUTPUTFILE>]
     negar-cli -i <INPUTFILE> [--aggresive --cleanup-ex-marks --cleanup-kashidas --cleanup-sapcing --fix-arabic-num --fix-dashes --fix-english-num --fix-english-quotes --fix-hamzeh --fix-non-persian-chars --fix-p-separate --fix-p-spacing --fix-s-separate --fix-s-spacing --fix-spacing-bq fix-three-dots --hamzeh-with-yeh -o <OUTPUTFILE>]
 
@@ -48,11 +49,12 @@ options:
     --fix-spacing-bq             Disable fix spacing braces and qoutes feature
     --fix-three-dots             Disable fix three dots feature  
     --hamzeh-with-yeh            Use 'Hamzeh' instead of 'yeh' for fix hamzeh feature 
-
+    -v, --version                    Print version and exit
 '''
 import sys
 from docopt import docopt
 from negar import virastar
+from version import __version__
 
 def main(args):
     """
@@ -62,6 +64,9 @@ def main(args):
     output_file = args['--output-file']
     file_name = args['--input-file']
     argli=[]
+    if args['--version']:
+        print __version__
+        sys.exit()
     if args['--aggresive']: argli.append('aggresive')
     if args['--cleanup-ex-marks']: argli.append('cleanup-ex-marks')
     if args['--cleanup-kashidas']: argli.append('cleanup-kashidas')
@@ -91,7 +96,7 @@ def main(args):
             output_file.write(run_PE.cleanup().encode('utf-8'))
             
     except:
-        print("boos")
+        print("There is a problem! I can't read/write to the file.")
 
 
 if __name__ == "__main__":
