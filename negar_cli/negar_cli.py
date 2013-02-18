@@ -63,7 +63,6 @@ def main(args):
     """
     output_file = args['--output-file']
     file_name = args['--input-file']
-    argli=[]
 
     if args['--version']:
         print __version__
