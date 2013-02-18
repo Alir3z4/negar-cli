@@ -26,7 +26,7 @@ Usage:
     negar-cli -h
     negar-cli -v
     negar-cli -i <INPUTFILE> [-o <OUTPUTFILE>]
-    negar-cli -i <INPUTFILE> [--aggresive --cleanup-ex-marks --cleanup-kashidas --cleanup-sapcing --fix-arabic-num --fix-dashes --fix-english-num --fix-english-quotes --fix-hamzeh --fix-non-persian-chars --fix-p-separate --fix-p-spacing --fix-s-separate --fix-s-spacing --fix-spacing-bq fix-three-dots --hamzeh-with-yeh -o <OUTPUTFILE>]
+    negar-cli -i <INPUTFILE> [--aggresive --cleanup-ex-marks --cleanup-kashidas --cleanup-sapcing --fix-arabic-num --fix-dashes --fix-english-num --fix-english-quotes --fix-hamzeh --fix-non-persian-chars --fix-p-separate --fix-p-spacing --fix-s-separate --fix-s-spacing --fix-spacing-bq --fix-three-dots --hamzeh-with-yeh -o <OUTPUTFILE>]
 
 options:
     -h, --help                   print help message.
@@ -64,26 +64,14 @@ def main(args):
     output_file = args['--output-file']
     file_name = args['--input-file']
     argli=[]
+
     if args['--version']:
         print __version__
         sys.exit()
-    if args['--aggresive']: argli.append('aggresive')
-    if args['--cleanup-ex-marks']: argli.append('cleanup-ex-marks')
-    if args['--cleanup-kashidas']: argli.append('cleanup-kashidas')
-    if args['--cleanup-spacing']: argli.append('cleanup-spacing')
-    if args['--fix-arabic-num']: argli.append('fix-arabic-num')
-    if args['--fix-dashes']: argli.append('fix-dashes')
-    if args['--fix-english-num']: argli.append('fix-english-num')
-    if args['--fix-english-quotes']: argli.append('fix-english-quote')
-    if args['--fix-hamzeh']: argli.append('fix-hamzeh')
-    if args['--fix-non-persian-chars']: argli.append('fix-non-persian-chars')
-    if args['--fix-p-separate']: argli.append('fix-p-separate')
-    if args['--fix-p-spacing']: argli.append('fix-p-spacing')
-    if args['--fix-s-separate']: argli.append('fix-s-separate')
-    if args['--fix-s-spacing']: argli.append('fix-s-spacing')
-    if args['--fix-spacing-bq']: argli.append('fix-spacing-bq')
-    if args['--fix-three-dots']: argli.append('fix-three-dots')
-    if args['--hamzeh-with-yeh']: argli.append('hamzeh-with-yeh')
+
+    # Make an argument list to pass to the virastar module for
+    # controlling features from command line arguments.
+    argli = [argument[2:] for argument in args if argument]
 
     try:
         input_file = open(file_name)
