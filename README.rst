@@ -9,17 +9,14 @@ How to use
 
 Usage of `negar-cli`:
 
-    $ negar-cli [ARGUMENTS] -f [INPUT_FILENAME] -o [OUTPUT_FILENAME]
+    $ negar-cli [ARGUMENTS] -i <INPUT_FILENAME> [-o OUTPUT_FILENAME]
 
 Arguments are:
 
-    -h, --help                       Display this help and exit
-    -V, --Version                    Print version number and exit
-    -i, --input-file=INPUT_FILE_NAME    Specify [INPUT_FILE]. The file who you want to edit
-    -o, --output-file=OUTPUT_FILE_NAME  Specify [OUT_PUT_FILE]. The file who you want the programs
-                                     output writes into it. If you don't specify this option
-                                     Negar will generate an auto file to save the result.
-    --gui                        Run negar's graphical user interface (GUI)
+    -h, --help                          Display this help and exit.
+    -v, --version                       Print version number and exit
+    -i, --input-file=INPUT_FILE_NAME    Specify [INPUT_FILE]. The file that you want to edit.
+    -o, --output-file=OUTPUT_FILE_NAME  Specify [OUT_PUT_FILE]. The file that you want the program's output written into it. If you don't specify this option negar-cli will output into standard output.
     --fix-dashes                 Disable fix dashes feature
     --fix-three-dots             Disable fix three dots feature
     --fix-english-quotes         Disable fix english quotes feature
@@ -38,4 +35,3 @@ Arguments are:
     --cleanup-ex-marks           Disable cleanup extra marks feature
     --cleanup-spacing            Disable cleanup spacing feature
     --trim-lt-whitespaces        Disable trim leading trailing whitespaces
-
