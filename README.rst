@@ -8,17 +8,15 @@ How to use
 ==========
 
 Usage of `negar-cli`:
-::
 
     $ negar-cli [ARGUMENTS] -f [INPUT_FILENAME] -o [OUTPUT_FILENAME]
 
 Arguments are:
-::
 
     -h, --help                       Display this help and exit
     -V, --Version                    Print version number and exit
-    -f, --file[=INPUT_FILE_NAME]     Specify [INPUT_FILE]. The file who you want to edit
-    -o, --output[=OUTPUT_FILE_NAME]  Specify [OUT_PUT_FILE]. The file who you want the programs
+    -i, --input-file=INPUT_FILE_NAME    Specify [INPUT_FILE]. The file who you want to edit
+    -o, --output-file=OUTPUT_FILE_NAME  Specify [OUT_PUT_FILE]. The file who you want the programs
                                      output writes into it. If you don't specify this option
                                      Negar will generate an auto file to save the result.
     --gui                        Run negar's graphical user interface (GUI)
@@ -39,4 +37,5 @@ Arguments are:
     --cleanup-kashidas           Disable cleanup 'kashidas' feature
     --cleanup-ex-marks           Disable cleanup extra marks feature
     --cleanup-spacing            Disable cleanup spacing feature
+    --trim-lt-whitespaces        Disable trim leading trailing whitespaces
 
