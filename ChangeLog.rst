@@ -1,8 +1,12 @@
-1.1.1 - 2013-02-24
+1.1.2 - 2022-04-05
+==================
+- More accurate try/except
+
+1.1.1 - 2022-04-04
 ==================
 - Fixed some issues with README.rst
 
-1.1 - 2013-02-23
+1.1 - 2022-04-05
 ================
 - Fixed to support Python 3.
 

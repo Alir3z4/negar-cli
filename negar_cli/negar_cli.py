@@ -84,8 +84,10 @@ def main(args=docopt(__doc__)):
                 fout.write(edited_text)
         else:
             print(edited_text)
-    except:
+    except IOError:
         print("There is a problem! I can't read/write to the file.")
+    except Exception as e:
+        print(e)
 
 if __name__ == "__main__":
     if len(sys.argv) == 1:
