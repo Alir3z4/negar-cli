@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 # negar-cli
 
@@ -75,12 +75,12 @@ def main(args=docopt(__doc__)):
     # controlling features from command line arguments.
     argli = [argument[2:] for argument in args if args[argument]]
     try:
-        with open(file_name, 'r') as fin:
+        with open(file_name, 'r', encoding="utf8") as fin:
             lines = fin.read()
         run_PE = virastar.PersianEditor(lines, *argli)
         edited_text = run_PE.cleanup()
         if output_file:
-            with open(output_file, 'w') as fout:
+            with open(output_file, 'w', encoding="utf8") as fout:
                 fout.write(edited_text)
         else:
             print(edited_text)

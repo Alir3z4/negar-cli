@@ -1,3 +1,8 @@
+1.1.3 - 2022-04-07
+==================
+- Using `enconding='utf8'` for all `open` commands as Windows default code page is `CP1251/CP1252`.
+- `docopt` added to setup's requirements.
+
 1.1.2 - 2022-04-05
 ==================
 - More accurate try/except

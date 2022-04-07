@@ -7,7 +7,7 @@ except ImportError:
 
 version = re.search(
     r'(__version__ = "(\d+.\d+(\.\d+)?)")',
-    open("negar_cli/version.py").read(),
+    open("negar_cli/version.py", encoding="utf8").read(),
     re.M).group(2)
 
 setup(
@@ -30,7 +30,7 @@ setup(
         'texteditor',
         'persian'
     ],
-    install_requires=['python-negar>=1.0.2',],
+    install_requires=['python-negar>=1.0.2','docopt'],
     entry_points={
         'console_scripts':[
             'negar-cli = negar_cli.negar_cli:main',
