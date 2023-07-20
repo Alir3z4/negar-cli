@@ -19,8 +19,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-'''
-negar-cli
+"""negar-cli.
 
 Usage:
     negar-cli -h
@@ -51,23 +50,21 @@ options:
     --hamzeh-with-yeh            Use 'Hamzeh' instead of 'yeh' for fix hamzeh feature
     --trim-lt-whitespaces        Disable trim leading trailing whitespaces
     -v, --version                    Print version and exit
-'''
+"""
+
 import sys
-from docopt import docopt
 from pathlib import Path
+from docopt import docopt
 from negar import virastar
 sys.path.append(Path(__file__).parent.as_posix()) # https://stackoverflow.com/questions/16981921
 from version import __version__
 
-def main(args=docopt(__doc__)):
-    """
-    main()
-    ======
-    """
-    output_file = args['--output-file']
-    file_name = args['--input-file']
 
-    if args['--version']:
+def main(args=docopt(__doc__)):
+    output_file = args["--output-file"]
+    file_name = args["--input-file"]
+
+    if args["--version"]:
         print (__version__)
         sys.exit()
 
@@ -75,12 +72,12 @@ def main(args=docopt(__doc__)):
     # controlling features from command line arguments.
     argli = [argument[2:] for argument in args if args[argument]]
     try:
-        with open(file_name, 'r', encoding="utf8") as fin:
+        with open(file_name, encoding="utf8") as fin:
             lines = fin.read()
         run_PE = virastar.PersianEditor(lines, *argli)
         edited_text = run_PE.cleanup()
         if output_file:
-            with open(output_file, 'w', encoding="utf8") as fout:
+            with open(output_file, "w", encoding="utf8") as fout:
                 fout.write(edited_text)
         else:
             print(edited_text)
