@@ -1,3 +1,7 @@
+1.1.4 - 2025-04-18
+==================
+- Negar CLi logo
+
 1.1.3 - 2022-04-07
 ==================
 - Using `enconding='utf8'` for all `open` commands as Windows default code page is `CP1251/CP1252`.
