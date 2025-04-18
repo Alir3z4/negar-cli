@@ -31,6 +31,7 @@ utest: setup
 upload: setup upypi utest
 
 clean:
+	@find . -type d -name __pycache__ -exec rm -rfv {} +
 	@rm negar_cli.egg-info/ -rfv
 	@rm build/ -rfv
 	@rm dist/ -rfv
