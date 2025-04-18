@@ -57,10 +57,11 @@ from pathlib import Path
 from docopt import docopt
 from negar import virastar
 sys.path.append(Path(__file__).parent.as_posix()) # https://stackoverflow.com/questions/16981921
-from version import logo
+from config import logo, __version__
 
 
 def main(args=docopt(__doc__)):
+    print(logo)
     output_file = args["--output-file"]
     file_name = args["--input-file"]
 
@@ -86,7 +87,6 @@ def main(args=docopt(__doc__)):
         print(e)
 
 if __name__ == "__main__":
-    print(logo)
     if len(sys.argv) == 1:
         print (__doc__)
         exit()
