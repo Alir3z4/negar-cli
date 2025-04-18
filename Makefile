@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VER=$(shell grep __version__ negar_cli/version.py|cut -d= -f2|tr -d '\" '|head -1)
+VER=$(shell grep __version__ negar_cli/config.py|cut -d= -f2|tr -d '\" '|head -1)
 
 .ONESHELL:
 
